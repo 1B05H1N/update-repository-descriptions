@@ -1,12 +1,10 @@
 import os
 import requests
-import openai
 import tempfile
 import subprocess
 from typing import List
 from dotenv import load_dotenv
 from openai import OpenAI
-import re
 import argparse
 
 GITHUB_API = "https://api.github.com"
@@ -18,10 +16,9 @@ load_dotenv()
 GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-openai.api_key = OPENAI_API_KEY
 
-# Instantiate OpenAI client (new API)
-client = OpenAI()
+# Instantiate OpenAI client
+client = OpenAI(api_key=OPENAI_API_KEY)
 
 HEADERS = {
     "Authorization": f"token {GITHUB_TOKEN}",

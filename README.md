@@ -32,7 +32,15 @@ OPENAI_API_KEY=your_openai_api_key
 pip install -r requirements.txt
 ```
 
-### 4. Run the script
+### 4. Test the connections (optional but recommended)
+
+```bash
+python test_connection.py
+```
+
+This will verify that your API keys are working correctly.
+
+### 5. Run the script
 
 ```bash
 python update_repo_description.py [--only-public] [--only-empty] [--skip-without-description]
@@ -53,6 +61,7 @@ python update_repo_description.py [--only-public] [--only-empty] [--skip-without
 
 ## Files
 - `update_repo_description.py`: Main script
+- `test_connection.py`: Test script to verify API connections
 - `requirements.txt`: Python dependencies
 - `.gitignore`: Ignores Python, environment, and secret files
 - `.env` (not committed): Your credentials (see above)
